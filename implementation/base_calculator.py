@@ -1,8 +1,9 @@
 from core.calculator import Calculator
 from config.config_project import logger
 
-
+#Rename!
 class BaseCalculator(Calculator):
+    #why you need log this?
     logger.info('get base calculator')
 
     @staticmethod
@@ -23,12 +24,14 @@ class BaseCalculator(Calculator):
             return a / b
         except ZeroDivisionError:
             print('division on zero')
-
+    #Rename -> calculate verb
     def calculator(self, operations, a, b):
         if operations == '+':
-            logger.info('operation add')
+            result = BaseCalculator.add(a, b)
+            logger.debug(f"Class: calculator method: operation add. a = '{a}', b = '{b}', result = '{result}'")
+            #remove self.complete
             self.complete
-            return BaseCalculator.add(a, b)
+            return result
 
         elif operations == '-':
             logger.info('operation odd')
@@ -47,3 +50,7 @@ class BaseCalculator(Calculator):
         else:
             logger.debug('operation div')
             return None
+
+# 1 Errors
+# 2 Input data, output and results
+# 3 Specific cases: external calls ant etc
