@@ -1,8 +1,8 @@
-from core.calculator import Calculator
+from core.calculator import BaseCalculator
 from config.config_project import logger
 
 #Rename!
-class BaseCalculator(Calculator):
+class Calculator(BaseCalculator):
     #why you need log this?
     logger.info('get base calculator')
 
@@ -25,7 +25,7 @@ class BaseCalculator(Calculator):
         except ZeroDivisionError:
             print('division on zero')
     #Rename -> calculate verb
-    def calculator(self, operations, a, b):
+    def calculate(self, operations, a, b):
         if operations == '+':
             result = BaseCalculator.add(a, b)
             logger.debug(f"Class: calculator method: operation add. a = '{a}', b = '{b}', result = '{result}'")

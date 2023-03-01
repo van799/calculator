@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 #Rename abstarct class Calculator to CalculatorBase
 #Don't methods and properties when you no needs them
-class Calculator(ABC):
+class CalculatorBase(ABC):
     def __init__(self, validator, converter, output):
         self.__complete = False
         self.__validator = validator
